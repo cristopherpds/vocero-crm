@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 /*
-  Sistema de diseño de Vocero: la misma marca que vocerocrm.com dentro del CRM.
-  Papel frío (#f6f8fc), tinta azul marino, acento azul eléctrico con remate
-  cian, tipografía Archivo para la interfaz, Instrument Serif itálica para los
-  acentos editoriales e IBM Plex Mono para etiquetas y horas.
+  Piel de Maxima Suplementos (maximasuplementos.com) sobre el sistema de Vocero:
+  negro y dorado (#F5C519), neutros cálidos sin tinte azul, Inter para la
+  interfaz y los acentos (Inter Black, como la web) e IBM Plex Mono para
+  etiquetas y horas. Misma estructura y tokens: solo cambian los valores.
 
   El tema activo se selecciona con `data-theme` en <html> (ver src/lib/theme.ts):
   el servidor lo escribe desde la cookie, así que no hay parpadeo.
@@ -19,28 +19,28 @@
 
     /* Neutros: papel frío de la landing */
     --bg: #ffffff;
-    --bg-subtle: #f6f8fc;
-    --bg-panel: #eef2f9;
-    --bg-hover: #e9eef8;
+    --bg-subtle: #f6f6f4;
+    --bg-panel: #efeeeb;
+    --bg-hover: #ebe9e5;
     /* Lo que flota sobre la página: diálogos, cajones, menús. En claro es el
        mismo blanco de siempre; en oscuro se aclara para despegarse. */
     --bg-raised: #ffffff;
-    --text: #0a1730;
-    --text-2: #42506b;
-    --text-3: #8391aa;
-    --text-4: #aab4c8;
-    --border: #e8edf6;
-    --border-strong: #dde5f1;
+    --text: #0a0a0a;
+    --text-2: #44403c;
+    --text-3: #736c66;
+    --text-4: #a8a29e;
+    --border: #ebe9e5;
+    --border-strong: #dedbd6;
     /* Chips dentro de una fila y la fila bajo el cursor. En claro coinciden
        con --bg y --bg-subtle; en oscuro NO: ahí --bg-subtle es más oscuro que
        --bg y un chip con fondo --bg desaparece dentro de la fila. */
     --chip-bg: #ffffff;
-    --row-hover: #f6f8fc;
+    --row-hover: #f6f6f4;
     /* 215 — Lo no hábil del calendario de Citas (ver .cal-off). */
-    --cal-off: #f6f8fc;
+    --cal-off: #f6f6f4;
 
     /* Chat: el cliente entra en verde WhatsApp, el CRM contesta en el acento */
-    --chat-bg: #f6f8fc;
+    --chat-bg: #f6f6f4;
     --bubble-in: #eaf7ef;
     --bubble-in-border: #d7eede;
     --bubble-out: var(--accent-tint);
@@ -86,17 +86,17 @@
     --info-text: #0038d8;
 
     /* Superficies auxiliares */
-    --overlay: rgba(4, 16, 46, 0.55);
+    --overlay: rgba(0, 0, 0, 0.6);
     --knob: #ffffff;
 
     /* Radios y sombras (las de la landing, con tinte azul marino) */
     --radius-sm: 9px;
     --radius: 12px;
     --radius-lg: 16px;
-    --shadow-sm: 0 1px 2px rgba(8, 27, 82, 0.06);
-    --shadow-md: 0 14px 40px -16px rgba(8, 27, 82, 0.16);
-    --shadow-pop: 0 30px 80px -20px rgba(8, 27, 82, 0.22),
-      0 8px 24px -12px rgba(8, 27, 82, 0.12);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 14px 40px -16px rgba(0, 0, 0, 0.18);
+    --shadow-pop: 0 30px 80px -20px rgba(0, 0, 0, 0.24),
+      0 8px 24px -12px rgba(0, 0, 0, 0.12);
 
     /* Densidad de filas de conversación */
     --row-py: 11px;
@@ -116,36 +116,36 @@
     /* Escalera de superficies, de la más honda a la más alta. --bg-subtle es
        el hueco (hilo del chat, columnas del pipeline, fuera de horario), como
        el papel gris del tema claro. */
-    --bg-subtle: #141c30;
-    --bg: #1c263c;
-    --row-hover: #212c45;
-    --bg-raised: #222d47;
-    --chip-bg: #26334d;
-    --bg-panel: #2c3a57;
-    --bg-hover: #2f3d5e;
+    --bg-subtle: #111111;
+    --bg: #1f1f1f;
+    --row-hover: #262626;
+    --bg-raised: #272727;
+    --chip-bg: #2c2c2c;
+    --bg-panel: #343434;
+    --bg-hover: #383838;
     /* 215 — Lo no hábil del calendario: el mismo hueco que en claro. */
-    --cal-off: #141c30;
-    --text: #e8eefc;
-    --text-2: #bac6e3;
+    --cal-off: #111111;
+    --text: #f5f5f4;
+    --text-2: #d6d3d1;
     /* ≥ 4.5:1 incluso sobre el hover más claro: la `.kicker` mide 10.5px. */
-    --text-3: #9aa9ca;
+    --text-3: #aaa39d;
     /* Solo iconos y deshabilitado (≥ 3:1), nunca texto de lectura. */
-    --text-4: #7888ad;
+    --text-4: #89817b;
     /* Bordes ≥ 1.6:1 contra la página (214) y ≥ 1.4:1 contra lo que flota. */
-    --border: #36476f;
-    --border-strong: #4a5d8e;
+    --border: #424242;
+    --border-strong: #575757;
 
     /* Chat */
-    --chat-bg: #141c30;
+    --chat-bg: #111111;
     --bubble-in: #173d2c;
     --bubble-in-border: #2a5e45;
 
     /* Acento: respaldo con el azul Vocero calculado para este fondo; el
        white-label lo recalcula (ver resolveAccentSet en lib/branding). */
-    --accent: #256bff;
-    --accent-hover: #4883ff;
-    --accent-soft: #1f3f82;
-    --accent-tint: #1e3567;
+    --accent: #0d5bff;
+    --accent-hover: #3475ff;
+    --accent-soft: #173b86;
+    --accent-tint: #1a305e;
     --accent-text: #6f9eff;
     --accent-fg: #ffffff;
     --accent-ink: var(--accent-text);
@@ -175,8 +175,8 @@
     --info-soft: #3a568c;
     --info-text: #9dbbff;
 
-    --overlay: rgba(2, 8, 24, 0.72);
-    --knob: #dfe6fa;
+    --overlay: rgba(0, 0, 0, 0.75);
+    --knob: #f5f5f4;
 
     /* Sombras: sobre oscuro necesitan más negro para leerse */
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
@@ -200,19 +200,19 @@
   */
   .nav-dark {
     color-scheme: dark;
-    --bg: #0b1327;
-    --bg-subtle: #070e20;
-    --bg-panel: #131f3d;
-    --bg-raised: #131f3d;
-    --bg-hover: #182750;
-    --text: #e8eefc;
-    --text-2: #a9b8dc;
-    --text-3: #7688b0;
-    --text-4: #55648a;
-    --border: #263866;
-    --border-strong: #34498a;
-    --chip-bg: #142040;
-    --row-hover: #111b36;
+    --bg: #000000;
+    --bg-subtle: #000000;
+    --bg-panel: #141414;
+    --bg-raised: #141414;
+    --bg-hover: #1f1f1f;
+    --text: #f5f5f4;
+    --text-2: #c4beb8;
+    --text-3: #958d86;
+    --text-4: #6b645e;
+    --border: #262626;
+    --border-strong: #3a3a3a;
+    --chip-bg: #141414;
+    --row-hover: #0f0f0f;
     --accent-ink: var(--accent-text);
     --ring: var(--accent);
     --shadow-pop: 0 30px 80px -20px rgba(0, 0, 0, 0.75),

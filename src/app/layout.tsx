@@ -1,22 +1,23 @@
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
-import { Archivo, IBM_Plex_Mono, Instrument_Serif } from "next/font/google";
+import { IBM_Plex_Mono, Inter } from "next/font/google";
 import { accentCssVariables, DEFAULT_BRANDING } from "@/lib/branding";
 import { faviconHref } from "@/lib/favicon";
 import { normalizeThemePreference, THEME_COOKIE } from "@/lib/theme";
 import { getBranding } from "@/server/branding";
 import "./globals.css";
 
-// Las tres voces de la marca, las mismas de vocerocrm.com. next/font las
-// descarga en BUILD y las sirve self-hosted (sin CDN en runtime: soberanía).
-const archivo = Archivo({
+// Voces de Maxima Suplementos: Inter, la de maximasuplementos.com, para la
+// interfaz y también para los acentos "editoriales" (en negrita, como los
+// titulares de la web). next/font la descarga en BUILD y la sirve self-hosted.
+const archivo = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 });
-const instrumentSerif = Instrument_Serif({
+const instrumentSerif = Inter({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["800", "900"],
   style: ["normal", "italic"],
   variable: "--font-serif",
   display: "swap",

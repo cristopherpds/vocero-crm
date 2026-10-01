@@ -227,15 +227,16 @@ describe("tema claro: no cambia", () => {
     // Son los que tenía cuando copiaba al tema oscuro de antes; si la barra
     // cambia, cambia también en claro, que es el tema que al dueño le gusta.
     expect(nav).toMatchObject({
-      "--bg": "#0b1327",
-      "--bg-subtle": "#070e20",
-      "--bg-panel": "#131f3d",
-      "--bg-hover": "#182750",
-      "--text": "#e8eefc",
-      "--text-2": "#a9b8dc",
-      "--text-3": "#7688b0",
-      "--border": "#263866",
-      "--border-strong": "#34498a",
+      // Piel de Maxima: barra negra como la cabecera de maximasuplementos.com.
+      "--bg": "#000000",
+      "--bg-subtle": "#000000",
+      "--bg-panel": "#141414",
+      "--bg-hover": "#1f1f1f",
+      "--text": "#f5f5f4",
+      "--text-2": "#c4beb8",
+      "--text-3": "#958d86",
+      "--border": "#262626",
+      "--border-strong": "#3a3a3a",
       "--ring": "var(--accent)",
     });
     expect(css).toMatch(/\.nav-dark \{\s*color-scheme: dark;/);

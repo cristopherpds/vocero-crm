@@ -59,6 +59,10 @@ export const DEFAULT_BRANDING: Branding = {
  * quien quiera un CRM más discreto.
  */
 export const ACCENT_PRESETS: Record<string, { label: string; set: AccentSet }> = {
+  "#f5c519": {
+    label: "Dorado Maxima",
+    set: { accent: "#f5c519", hover: "#e5b20d", soft: "#fbe9a6", tint: "#fdf6dc", text: "#7a6106", fg: "#0a0a0a" },
+  },
   "#0d5bff": {
     label: "Azul Vocero",
     set: { accent: "#0d5bff", hover: "#0a4de6", soft: "#d3e2ff", tint: "#ebf1ff", text: "#0038d8", fg: "#ffffff" },
@@ -132,7 +136,7 @@ function contrast(a: Rgb, b: Rgb): number {
 }
 
 /** Fondo de referencia del tema oscuro (debe seguir a `--bg` de globals.css). */
-const DARK_BG: Rgb = { r: 0x1c, g: 0x26, b: 0x3c };
+const DARK_BG: Rgb = { r: 0x1f, g: 0x1f, b: 0x1f };
 
 /**
  * Fondo de referencia de la barra lateral (debe seguir a `--bg` de `.nav-dark`).
@@ -140,7 +144,7 @@ const DARK_BG: Rgb = { r: 0x1c, g: 0x26, b: 0x3c };
  * contra ella y no contra la página: si siguiera a DARK_BG, cambiar el tema
  * oscuro repintaría también la barra del tema claro.
  */
-const NAV_BG: Rgb = { r: 0x0b, g: 0x13, b: 0x27 };
+const NAV_BG: Rgb = { r: 0x00, g: 0x00, b: 0x00 };
 
 /** Tinta ENCIMA del acento: blanco solo si pasa AA (4.5:1), si no, casi negro. */
 const INK_ON_LIGHT = "#0f1419";
@@ -169,7 +173,7 @@ type DarkRecipe = { bg: Rgb; minContrast: number; soft: number; tint: number; te
 // Página oscura: con 3:1 el azul Vocero conserva la tinta blanca (4.5:1); el
 // tint más denso (0.78) hace que la fila seleccionada se vea sin leer el color
 // del texto (≥ 1.25:1 contra el fondo).
-const PAGE_DARK: DarkRecipe = { bg: DARK_BG, minContrast: 3, soft: 0.64, tint: 0.78, text: 0.34 };
+const PAGE_DARK: DarkRecipe = { bg: DARK_BG, minContrast: 3, soft: 0.54, tint: 0.72, text: 0.34 };
 // Barra lateral: la receta de siempre, para que se vea igual que antes.
 const NAV_DARK: DarkRecipe = { bg: NAV_BG, minContrast: 3.5, soft: 0.72, tint: 0.88, text: 0.28 };
 

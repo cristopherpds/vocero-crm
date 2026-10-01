@@ -10,8 +10,9 @@ import {
   resolveNavAccentSet,
 } from "@/lib/branding";
 
-const DARK_BG = "#1c263c";
-const NAV_BG = "#0b1327";
+// Piel de Maxima: página y barra negras (ver globals.css y lib/branding).
+const DARK_BG = "#1f1f1f";
+const NAV_BG = "#000000";
 
 /** Contraste WCAG entre dos hex, para afirmar sobre legibilidad y no sobre
  *  valores concretos: lo que importa es que se LEA, no que dé cierto color. */
@@ -150,11 +151,11 @@ describe("white-label: barra lateral bicolor (.nav-dark)", () => {
     // La receta de la barra es la de antes: el ítem activo del tema claro no
     // cambia aunque el tema oscuro de la página sí.
     expect(resolveNavAccentSet(DEFAULT_BRANDING.accent)).toEqual({
-      accent: "#256bff",
-      hover: "#4883ff",
-      soft: "#122c63",
-      tint: "#0e1e41",
-      text: "#6295ff",
+      accent: "#0d5bff",
+      hover: "#3475ff",
+      soft: "#041947",
+      tint: "#020b1f",
+      text: "#5189ff",
       fg: "#ffffff",
     });
   });
